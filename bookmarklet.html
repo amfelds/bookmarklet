@@ -4,11 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <title>Bookmarklet test</title>
-    <link rel="stylesheet" type="text/css" href="queryStyle.css" />  
-    <script src="jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="queryScript.js" type="text/javascript"></script>
 </head>
 <body>
     <a href="javascript:alert('Sending%20'+encodeURIComponent(location.href)+';'+encodeURIComponent(document.title));">Add me to your favorites bar!</a>
+    <a href="javascript:(function(){_my_cookit_script=document.createElement('SCRIPT');_my_cookit_script.type='text/javascript';_my_cookit_script.src=encodeURIComponent('C:%2FUsers%2Falexfe%2FDesktop%2Fcookitbookmarklet.js');document.getElementsByTagName('head')[0].appendChild(_my_cookit_script);})();">This one downloads a dynamic javascript file from a server.</a>
 </body>
 </html>

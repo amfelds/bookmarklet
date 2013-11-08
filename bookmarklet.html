@@ -4,9 +4,20 @@
 <head>
     <meta charset="utf-8" />
     <title>Bookmarklet test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="https://www.dropbox.com/static/api/dropbox-datastores-1.0-latest.js"></script>
 </head>
 <body>
-    <a href="javascript:alert('Sending%20'+encodeURIComponent(location.href)+';'+encodeURIComponent(document.title));">Add me to your favorites bar!</a>
-    <a href="javascript:(function(){_my_cookit_script=document.createElement('SCRIPT');_my_cookit_script.type='text/javascript';_my_cookit_script.src=encodeURIComponent('C:%2FUsers%2Falexfe%2FDesktop%2Fcookitbookmarklet.js');document.getElementsByTagName('head')[0].appendChild(_my_cookit_script);})();">This one downloads a dynamic javascript file from a server.</a>
+    <a href="javascript:(function(){_my_cookit_script=document.createElement('SCRIPT');_my_cookit_script.type='text/javascript';_my_cookit_script.src='http://localhost:8000/dropbox/bookmarklet/cookitbookmarklet.js';document.getElementsByTagName('head')[0].appendChild(_my_cookit_script);})();">This one downloads a dynamic javascript file from a 'server'.</a>
+    <br />
+    <a href="javascript:(function(){_my_cookit_frame=document.createElement('IFRAME');_my_cookit_frame.src='http://localhost:8000/dropbox/dropboxapiapp/home.html';document.getElementsByTagName('body')[0].appendChild(_my_cookit_frame);})();">This one creates an iframe.</a>
+<br /><br />
+
+<div id="testFrame">
+<form id="enterURLform">
+	<textarea id="urlTextArea"></textarea>
+	<button id="urlSubmit">Process URL</button>
+</form>
+</div>
 </body>
 </html>
